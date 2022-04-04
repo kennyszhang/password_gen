@@ -1,8 +1,9 @@
 #password gen by kenny zhang
-import pyperclip, random, string, time
+import random, string, time
 
 def main():
     password = []
+    length = 16
     
     for x in range(random.randint(5,6)):
         temp = random.choice(string.digits.replace('0''1', ''))
@@ -10,7 +11,7 @@ def main():
     for x in range(random.randint(5,6)):
         temp = random.choice("@&$!#?%")
         password.append(temp)
-    temp = 16 - len(password)
+    temp = length - len(password)
     for x in range(temp):
         temp = random.choice(string.ascii_letters.replace('I''l''o''O',''))
         password.append(temp)
@@ -18,11 +19,11 @@ def main():
     random.shuffle(password)
     password = "".join(password)
     print(password)
-    pyperclip.copy(str(password))
-    print("\npassword copied to clipboard")
-    time.sleep(5)
+    time.sleep(10)
     
-main()
+
+if __name__ == "__main__":   
+    main()
 
 
 
